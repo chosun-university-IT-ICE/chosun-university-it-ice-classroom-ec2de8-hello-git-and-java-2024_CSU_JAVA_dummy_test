@@ -19,17 +19,15 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
-        distribution: 'adopt'
+        distribution: 'adopt'  # 또는 'zulu', 'temurin' 등 다른 배포판 사용 가능
 
     - name: Compile Java Program
       run: |
         javac Hello.java
-      continue-on-error: true
 
     - name: Run Java Program
       run: |
         java Hello > output.txt
-      continue-on-error: true
 
     - name: Verify Output
       run: |
